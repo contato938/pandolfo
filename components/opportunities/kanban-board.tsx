@@ -116,7 +116,7 @@ function KanbanCard({ item }: { item: Opportunity }) {
             <span className="text-xs text-muted-foreground">{item.budgetRange}</span>
             <span className="font-bold text-sm text-primary">
                 {item.estimatedValue ? 
-                   new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits:0 }).format(item.estimatedValue) 
+                   new Intl.NumberFormat('es-PY', { style: 'currency', currency: 'PYG', maximumFractionDigits:0 }).format(item.estimatedValue) 
                    : '-'}
             </span>
         </div>
