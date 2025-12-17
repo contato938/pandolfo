@@ -47,74 +47,74 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: #f8fafc;
-  --foreground: #0b1220;
-  --card: #ffffff;
-  --card-foreground: #0b1220;
-  --popover: #ffffff;
-  --popover-foreground: #0b1220;
-  --primary: #0f172a;
-  --primary-foreground: #ffffff;
-  --secondary: #f1f5f9;
-  --secondary-foreground: #0f172a;
-  --muted: #f1f5f9;
-  --muted-foreground: #64748b;
-  --accent: #f59e0b;
-  --accent-foreground: #ffffff;
-  --destructive: #dc2626;
-  --destructive-foreground: #ffffff;
-  --border: #e2e8f0;
-  --input: #e2e8f0;
-  --ring: #0f172a;
-  --chart-1: #0f172a;
-  --chart-2: #f59e0b;
-  --chart-3: #16a34a;
-  --chart-4: #64748b;
-  --chart-5: #e2e8f0;
-  --sidebar: #ffffff;
-  --sidebar-foreground: #0b1220;
-  --sidebar-primary: #0f172a;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #f1f5f9;
-  --sidebar-accent-foreground: #0f172a;
-  --sidebar-border: #e2e8f0;
-  --sidebar-ring: #0f172a;
+  --radius: 0.75rem;
+  --background: #FFFCFC;
+  --foreground: #000000;
+  --card: #FFFFFF;
+  --card-foreground: #000000;
+  --popover: #FFFFFF;
+  --popover-foreground: #000000;
+  --primary: #0B3263;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F0F0F0;
+  --secondary-foreground: #000000;
+  --muted: #F0F0F0;
+  --muted-foreground: #1F1F1F;
+  --accent: #0F3F7D;
+  --accent-foreground: #FFFFFF;
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+  --border: #ACBFD8;
+  --input: #ACBFD8;
+  --ring: #0B3263;
+  --chart-1: #0B3263;
+  --chart-2: #0F3F7D;
+  --chart-3: #ACBFD8;
+  --chart-4: #003250;
+  --chart-5: #DC2626;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #000000;
+  --sidebar-primary: #0B3263;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F0F0F0;
+  --sidebar-accent-foreground: #000000;
+  --sidebar-border: #ACBFD8;
+  --sidebar-ring: #0B3263;
 }
 
 .dark {
-  --background: #0b1220;
-  --foreground: #f8fafc;
-  --card: #0f172a;
-  --card-foreground: #f8fafc;
-  --popover: #0f172a;
-  --popover-foreground: #f8fafc;
-  --primary: #f8fafc;
-  --primary-foreground: #0f172a;
-  --secondary: #1e293b;
-  --secondary-foreground: #f8fafc;
-  --muted: #1e293b;
-  --muted-foreground: #94a3b8;
-  --accent: #f59e0b;
-  --accent-foreground: #ffffff;
-  --destructive: #ef4444;
-  --destructive-foreground: #ffffff;
-  --border: #1e293b;
-  --input: #1e293b;
-  --ring: #f1f5f9;
-  --chart-1: #f59e0b;
-  --chart-2: #16a34a;
-  --chart-3: #f8fafc;
-  --chart-4: #64748b;
-  --chart-5: #1e293b;
-  --sidebar: #0f172a;
-  --sidebar-foreground: #f8fafc;
-  --sidebar-primary: #f59e0b;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #1e293b;
-  --sidebar-accent-foreground: #f8fafc;
-  --sidebar-border: #1e293b;
-  --sidebar-ring: #f1f5f9;
+  --background: #003250;
+  --foreground: #FFFFFF;
+  --card: #1F1F1F;
+  --card-foreground: #FFFFFF;
+  --popover: #1F1F1F;
+  --popover-foreground: #FFFFFF;
+  --primary: #0B3263;
+  --primary-foreground: #FFFFFF;
+  --secondary: #1F1F1F;
+  --secondary-foreground: #FFFFFF;
+  --muted: #1F1F1F;
+  --muted-foreground: #ACBFD8;
+  --accent: #0F3F7D;
+  --accent-foreground: #FFFFFF;
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+  --border: #0F3F7D;
+  --input: #0F3F7D;
+  --ring: #0B3263;
+  --chart-1: #0B3263;
+  --chart-2: #0F3F7D;
+  --chart-3: #ACBFD8;
+  --chart-4: #003250;
+  --chart-5: #DC2626;
+  --sidebar: #003250;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #0B3263;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #1F1F1F;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #0F3F7D;
+  --sidebar-ring: #0B3263;
 }
 
 @layer base {
@@ -122,6 +122,58 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
   }
+  
+  /* Smooth scrolling */
+  html {
+    @apply scroll-smooth;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-border/80;
+  }
+  
+  /* Animations */
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+  
+  .animate-shimmer {
+    animation: shimmer 2s infinite linear;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      transparent 100%
+    );
+    background-size: 1000px 100%;
+  }
+}
+
+/* Recharts responsive adjustments */
+.recharts-wrapper {
+  @apply !w-full;
+}
+
+.recharts-surface {
+  @apply overflow-visible;
 }

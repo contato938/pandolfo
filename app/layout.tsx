@@ -17,8 +17,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es-PY">
+    // Em dev, algumas ferramentas/extensões (ex: overlays do editor) podem injetar atributos no DOM
+    // antes da hidratação e causar warnings ruidosos de hydration mismatch.
+    <html lang="es-PY" suppressHydrationWarning>
       <body
+        suppressHydrationWarning
         className={`${inter.className} min-h-screen bg-background antialiased text-foreground`}
       >
         <ClientLayout>
