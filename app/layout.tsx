@@ -9,8 +9,7 @@ export const metadata: Metadata = {
   description: "Executive dashboard for multi-branch CRM",
 };
 
-import { Sidebar } from "@/components/layout/sidebar";
-import { Topbar } from "@/components/layout/topbar";
+import { ClientLayout } from "@/components/layout/client-layout";
 
 export default function RootLayout({
   children,
@@ -22,15 +21,9 @@ export default function RootLayout({
       <body
         className={`${inter.className} min-h-screen bg-background antialiased text-foreground`}
       >
-        <div className="flex min-h-screen">
-          <Sidebar />
-          <div className="flex-1 flex flex-col md:pl-64 transition-all duration-300">
-            <Topbar />
-            <main className="flex-1 p-6 md:p-8 overflow-y-auto">
-              {children}
-            </main>
-          </div>
-        </div>
+        <ClientLayout>
+            {children}
+        </ClientLayout>
       </body>
     </html>
   );

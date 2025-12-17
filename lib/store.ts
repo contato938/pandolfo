@@ -11,6 +11,9 @@ interface GlobalState {
   setUser: (user: User) => void;
   setSelectedBranchId: (id: string | 'all') => void;
   setDateRange: (range: DateRange | undefined) => void;
+  
+  isSidebarOpen: boolean;
+  toggleSidebar: () => void;
 }
 
 export const useStore = create<GlobalState>((set) => ({
@@ -26,7 +29,10 @@ export const useStore = create<GlobalState>((set) => ({
     to: new Date(),
   },
   
+  isSidebarOpen: true,
+  
   setUser: (user) => set({ user }),
   setSelectedBranchId: (id) => set({ selectedBranchId: id }),
   setDateRange: (range) => set({ dateRange: range }),
+  toggleSidebar: () => set((state) => ({ isSidebarOpen: !state.isSidebarOpen })),
 }));

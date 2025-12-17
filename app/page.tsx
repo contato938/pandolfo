@@ -19,6 +19,11 @@ export default function DashboardPage() {
   const [leads, setLeads] = useState<Lead[]>([]);
   const [opportunities, setOpportunities] = useState<Opportunity[]>([]);
   const [loading, setLoading] = useState(true);
+  const [currentDate, setCurrentDate] = useState<string>("");
+
+  useEffect(() => {
+    setCurrentDate(new Date().toLocaleTimeString());
+  }, []);
 
   // Fetch data
   useEffect(() => {
@@ -119,7 +124,7 @@ export default function DashboardPage() {
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-bold tracking-tight">Dashboard Ejecutivo</h1>
         <div className="text-sm text-muted-foreground">
-            Última actualización: {new Date().toLocaleTimeString()}
+            Última actualización: {currentDate}
         </div>
       </div>
 
